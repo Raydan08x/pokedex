@@ -32,6 +32,6 @@ button.addEventListener('click', async (e) => {
         </div>
         `;
     } catch (error) {
-        results.innerHTML = '<li>Pokémon no encontrado</li>';
+        results.innerHTML = '<p>Pokémon no encontrado</p>';
     }
 });
