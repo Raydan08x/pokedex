@@ -6,13 +6,14 @@ const results = document.getElementById('results');
 button.addEventListener('click', async (e) => {
     e.preventDefault()
     const pokemonName = input.value.toLowerCase();
+    console.log("hola");
     try {
         const response = await fetch(
-            `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+        `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
         );
 
         if (!response.ok) {
-            throw new Error('Pokémon no encontrado');
+        throw new Error('Pokémon no encontrado');
         }
 
         const pokemon = await response.json();
@@ -20,7 +21,7 @@ button.addEventListener('click', async (e) => {
         results.innerHTML = `
         <div class="card" style="width: 18rem;">
             <img src="${pokemon.sprites.other['official-artwork'].front_default}"
-                class="card-img-top" alt="ditto front">
+                class="card-img-top" alt="front-pokemon">
             <div class="card-body">
                 <span class="badge badge-pill badge-secondary">ID </span>
                 <h5 class="card-title">${pokemon.name}</h5>
