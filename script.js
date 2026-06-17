@@ -16,7 +16,7 @@ let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 let pokemonesCargados = [];
 
 function cargarPokemonesKanto() {
-    for (let id = 1; id <= 151; id++) {
+    for (let id = 1; id <= 251; id++) {
         buscarPokemon(id);
     }
 }
@@ -80,6 +80,8 @@ function agregarFavorito(idPokemon) {
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
     mostrarFavoritos();
+
+    document.getElementById("listaFavoritos").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 async function mostrarFavoritos() {
